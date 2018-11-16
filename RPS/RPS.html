@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rock Paper Scissors</title>
+		<style>
+                body {
+        background-color: #e6e6e6;
+        }
+
+        #heading {
+        background-color: #666666;
+        width: 500px;
+        height: 100px;
+        border-radius: 25px;
+        text-align: center;
+        margin: auto;
+        }
+
+        #heading > p:nth-child(1) {
+        font-size: 36px;
+        font-family: trebuchetms ;
+        color: #ffffff;
+        }
+
+        #heading > p:nth-child(2) {
+        font-size: 14px;
+        font-family: trebuchetms ;
+        color: orangered;
+        }
+
+
+        body > div:nth-child(2) {
+        margin-top: 10px;
+        background-color: #cccccc;
+        border-radius: 20px;
+        width: 1660px
+        }
+
+        #playerChoice {
+        font-family:sans-serif;
+        display:inline-block;
+        position: relative;
+        margin-left: 30px
+        }
+
+        #CompChoice {
+        font-family:sans-serif;
+        display:inline-block;
+        float: right;
+        position: relative;
+        margin-right: 20px;
+        }
+
+        .clickR {
+        width: 200px;
+        height: 160px;
+        border-radius: 20px;
+        background-color: #cc0000;
+        background-image: url("http://makepixelart.com/peoplepods/files/images/1661919.resized.png");
+
+        }
+
+        .clickP{
+        width: 200px;
+        height: 160px;
+        border-radius: 20px;
+        background-color: #ffcc00;
+        text-align: center;
+        background-image: url("http://makepixelart.com/peoplepods/files/images/1661939.resized.png");
+
+        }
+
+        .clickS {
+        width: 200px;
+        height: 160px;
+        border-radius: 20px;
+        background-color: #00e1b1;
+        text-align: center;
+        background-image: url("http://makepixelart.com/peoplepods/files/images/1661962.resized.png");  
+        }
+
+        #comprock {
+        width: 200px;
+        height: 160px;
+        border-radius: 20px;
+        background-color: #cc0000;
+        text-align: center;
+        background-image: url("http://makepixelart.com/peoplepods/files/images/1661919.resized.png")
+
+        }
+
+        #comppaper {
+        width: 200px;
+        height: 160px;
+        border-radius: 20px;
+        background-color: #ffcc00;
+        text-align: center;
+
+        background-image: url("http://makepixelart.com/peoplepods/files/images/1661939.resized.png")
+        }
+
+        #compscissors {
+        width: 200px;
+        height: 160px;
+        border-radius: 20px;
+        background-color: #00e1b1;
+        text-align: center;
+        background-image: url("http://makepixelart.com/peoplepods/files/images/1661964.resized.png")
+
+        }
+
+        .comp {
+        display: inline-block;
+        position: relative;
+        margin-left: 440px;
+        float: right;
+        }
+
+        .player {
+        display: inline-block;
+        }
+
+        .results {
+        display: inline-block;
+        position: relative;
+        height: 200px;
+        width: 400px;
+        background-color: #ffffff;
+        margin-left: 400px;
+        margin-bottom: 150px;
+        border-radius: 5px;
+        text-align: center;
+        border-style: dashed;
+        border-color: #cccccc;
+        }
+
+        #win{
+        color: green;
+        font-family: arial;
+        margin-bottom: 25px;
+        font-size: 30px;
+        }
+
+        #lose{
+        color: red;
+        font-family: arial;
+        margin-bottom: 25px;
+        font-size: 30px;
+        }
+
+        #tie{
+        color: orange;
+        font-family: arial;
+        margin-bottom: 25px;
+        font-size: 30px;
+        }
+
+        .highlight{
+        border-color: darkgray;
+        border-style: solid;
+        border-width: medium;
+        }
+
+        </style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+		</script>
+		<script type = "text/javascript" >
+            $(document).ready(function(){
+$('.results').fadeTo('fast',.00001)
+
+var computerChoice = Math.random();
+if (computerChoice <= 0.33) {
+	computerChoice = "rock";
+	var compChoice = $('#comprock')
+} else if(computerChoice >= 0.66) {
+	computerChoice = "paper";
+	var compChoice = $('#comppaper')
+} else {
+	computerChoice = "scissors";
+	var compChoice = $('#compscissors')
+} console.log("Computer chooses: " + computerChoice);
+
+
+var compare = function(choice1, choice2) { 
+    if (choice1===choice2) {
+        var result = $('#tie')
+	result.fadeTo('fast',.99)
+	return "The result is a tie!"
+    } else if (choice1 === "rock") {
+        if (choice2 === "scissors") {
+        var result = $('#win')
+	result.fadeTo('fast',.99)            
+	return "player wins"
+            }else { 
+         var result = $('#lose')
+	result.fadeTo('fast',.99)              
+	 return "computer wins"
+                }
+    } else if (choice1 === "paper") {
+	if (choice2 === "rock") {
+        var result = $('#win')
+	result.fadeTo('fast',.99)		
+	return "player wins"
+	}else {
+        var result = $('#lose')
+	result.fadeTo('fast',.99)	
+	return "computer wins"
+        }
+    }else if (choice1 === "scissors") {
+	if (choice2 ==="paper"){
+	var result = $('#win')
+	result.fadeTo('fast',.99)
+	return "player wins"
+	}else {
+        var result = $('#lose')
+	result.fadeTo('fast',.99)        
+	return "computer wins"
+        }
+    }
+}  
+
+
+$('.player > div').mouseenter(function(){
+    $(this).addClass('highlight')   
+})
+
+$('.player > div').mouseleave(function(){
+    $(this).removeClass('highlight')   
+})
+
+	$('#rock').click(function(){
+		var playerChoice = "rock"
+		console.log(compare(playerChoice,computerChoice))
+		$('#rock').fadeTo('fast',.00001)
+		compChoice.fadeTo('slow',.00001)
+		$('.results').fadeTo('slow',1)
+		$('.results > p').fadeTo('fast',.0001)
+		compare(playerChoice,computerChoice)
+		$('#rock').removeAttr('id')
+		$('#paper').removeAttr('id')
+		$('#scissors').removeAttr('id')
+		compare = ""
+	});
+	$('#paper').click(function(){
+		var playerChoice = "paper"
+		console.log(compare(playerChoice,computerChoice))
+		$('#paper').fadeTo('fast',.00001)
+		compChoice.fadeTo('slow',.00001)
+		$('.results').fadeTo('slow',1)
+		$('.results > p').fadeTo('fast',.0001)
+		compare(playerChoice,computerChoice)
+		$('#rock').removeAttr('id')
+		$('#paper').removeAttr('id')
+		$('#scissors').removeAttr('id')
+		compare=""
+	});
+	$('#scissors').click(function(){
+		var playerChoice = "scissors"
+		console.log(compare(playerChoice,computerChoice))
+		$('#scissors').fadeTo('fast',.00001)
+		compChoice.fadeTo('slow',.00001)
+		$('.results').fadeTo('slow',1)
+		$('.results > p').fadeTo('fast',.0001)
+		compare(playerChoice,computerChoice)
+		$('#rock').removeAttr('id')
+		$('#paper').removeAttr('id')
+		$('#scissors').removeAttr('id')
+		compare= ""
+	});
+
+
+	$('button').click(function(){
+		location.reload()
+	})
+
+
+})
+		</script>
+	</head>
+	<body>
+		<div id ="heading">
+			<p>Rock Paper Scissors</p>
+            <p>Joseph Bain</p>
+		</div>
+		<div>
+            <div>
+                <p id='playerChoice'>PLAYER CHOICE</p>
+                <p id='CompChoice'>COMPUTER CHOICE</p>
+            </div>
+            <div class="player">
+				<div class = "clickR" id="rock"></div>
+				<div class = "clickP" id="paper"></div>
+				<div class = "clickS" id="scissors"></div>
+			</div>
+			<div class="results">
+				<p id="win">player wins</p>
+				<p id= "tie">The result is a tie!</p>
+				<p id="lose">player loses</p>
+				<button>Play Again</button>
+			</div>
+			<div class= "comp">
+				<div id="comprock"></div>
+				<div id="comppaper"></div>
+				<div id="compscissors"></div>
+			</div>			
+		</div>
+	</body>
+</html>

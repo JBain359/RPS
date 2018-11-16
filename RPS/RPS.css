@@ -1,0 +1,158 @@
+body {
+background-color: #e6e6e6;
+position: fixed;
+}
+
+#heading {
+background-color: #666666;
+width: 500px;
+height: 100px;
+border-radius: 25px;
+text-align: center;
+margin: auto;
+}
+
+#heading > p:nth-child(1) {
+font-size: 36px;
+font-family: trebuchetms ;
+color: #ffffff;
+}
+
+#heading > p:nth-child(2) {
+font-size: 14px;
+font-family: trebuchetms ;
+color: orangered;
+}
+
+
+body > div:nth-child(2) {
+margin-top: 10px;
+background-color: #cccccc;
+border-radius: 20px;
+width: 1660px
+}
+
+#playerChoice {
+font-family:sans-serif;
+display:inline-block;
+position: relative;
+margin-left: 30px
+}
+
+#CompChoice {
+font-family:sans-serif;
+display:inline-block;
+float: right;
+position: relative;
+margin-right: 20px;
+}
+
+.clickR {
+width: 200px;
+height: 160px;
+border-radius: 20px;
+background-color: #cc0000;
+background-image: url("http://makepixelart.com/peoplepods/files/images/1661919.resized.png");
+
+}
+
+.clickP{
+width: 200px;
+height: 160px;
+border-radius: 20px;
+background-color: #ffcc00;
+text-align: center;
+background-image: url("http://makepixelart.com/peoplepods/files/images/1661939.resized.png");
+
+}
+
+.clickS {
+width: 200px;
+height: 160px;
+border-radius: 20px;
+background-color: #00e1b1;
+text-align: center;
+background-image: url("http://makepixelart.com/peoplepods/files/images/1661962.resized.png");  
+}
+
+#comprock {
+width: 200px;
+height: 160px;
+border-radius: 20px;
+background-color: #cc0000;
+text-align: center;
+background-image: url("http://makepixelart.com/peoplepods/files/images/1661919.resized.png")
+
+}
+
+#comppaper {
+width: 200px;
+height: 160px;
+border-radius: 20px;
+background-color: #ffcc00;
+text-align: center;
+
+background-image: url("http://makepixelart.com/peoplepods/files/images/1661939.resized.png")
+}
+
+#compscissors {
+width: 200px;
+height: 160px;
+border-radius: 20px;
+background-color: #00e1b1;
+text-align: center;
+background-image: url("http://makepixelart.com/peoplepods/files/images/1661964.resized.png")
+
+}
+
+.comp {
+display: inline-block;
+position: relative;
+margin-left: 440px;
+float: right;
+}
+
+.player {
+display: inline-block;
+}
+
+.results {
+display: inline-block;
+position: relative;
+height: 200px;
+width: 400px;
+background-color: #ffffff;
+margin-left: 400px;
+margin-bottom: 150px;
+border-radius: 5px;
+text-align: center;
+border-style: dashed;
+border-color: #cccccc;
+}
+
+#win{
+color: green;
+font-family: arial;
+margin-bottom: 25px;
+font-size: 30px;
+}
+
+#lose{
+color: red;
+font-family: arial;
+margin-bottom: 25px;
+font-size: 30px;
+}
+
+#tie{
+color: orange;
+font-family: arial;
+margin-bottom: 25px;
+font-size: 30px;
+}
+
+.highlight{
+border-color: darkgray;
+border-style: solid;
+border-width: medium;
+}

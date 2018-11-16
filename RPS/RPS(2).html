@@ -1,0 +1,40 @@
+<!--Alright! so this is my first actual project all on my own, the simple game Rock Paper Scissors! Gotta start off somewhere right? It's kind of "the fruit of my earliest efforts" It's early 2015 when i did this and I have to tell future Joe and all the other peps that may be seeing this that I hope you know and follow your dreams :) -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rock Paper Scissors</title>
+		<link rel = "stylesheet" type = "text/css"  href = "RPS.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+		</script>
+		<script type = "text/javascript" src = "RPS.js">
+		</script>
+	</head>
+	<body>
+		<div id ="heading">
+			<p>Rock Paper Scissors</p>
+            <p>Joseph Bain</p>
+		</div>
+		<div>
+            <div>
+                <p id='playerChoice'>PLAYER CHOICE</p>
+                <p id='CompChoice'>COMPUTER CHOICE</p>
+            </div>
+            <div class="player">
+				<div class = "clickR" id="rock"></div>
+				<div class = "clickP" id="paper"></div>
+				<div class = "clickS" id="scissors"></div>
+			</div>
+			<div class="results">
+				<p id="win">player wins</p>
+				<p id= "tie">The result is a tie!</p>
+				<p id="lose">player loses</p>
+				<button>Play Again</button>
+			</div>
+			<div class= "comp">
+				<div id="comprock"></div>
+				<div id="comppaper"></div>
+				<div id="compscissors"></div>
+			</div>			
+		</div>
+	</body>
+</html>
